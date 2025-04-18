@@ -25,6 +25,9 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    if (project.android.hasProperty("namespace")) {
+        namespace = "com.dooboolab.fluttersound"
+    }
     compileSdkVersion 30
 
     defaultConfig {
