@@ -18,7 +18,7 @@
  */
 
 
-#define FULL_FLAVOR
+#define LITE_FLAVOR
 #ifdef FULL_FLAVOR
 
 #import <Flutter/Flutter.h>
