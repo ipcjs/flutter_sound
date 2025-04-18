@@ -23,7 +23,6 @@ import android.app.Activity;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 
@@ -44,25 +43,6 @@ public class FlutterSound
 	{
 		this.pluginBinding = binding;
 	}
-
-
-	/**
-	 * Plugin registration.
-	 */
-	public static void registerWith ( Registrar registrar )
-	{
-		if (registrar.activity() == null) {
-			return;
-		}
-		//reg = registrar;
-		Flauto.androidContext = registrar.context ();
-		Flauto.androidActivity = registrar.activity ();
-
-		FlutterSoundPlayerManager.attachFlautoPlayer ( Flauto.androidContext, registrar.messenger () );
-		FlutterSoundRecorderManager.attachFlautoRecorder ( Flauto.androidContext, registrar.messenger ()  );
-        if (FULL_FLAVOR) ;//{ FlutterSoundFFmpeg.attachFFmpegPlugin( Flauto.androidContext, registrar.messenger ()  ); }
-	}
-
 
 	@Override
 	public void onDetachedFromEngine ( FlutterPlugin.FlutterPluginBinding binding )
