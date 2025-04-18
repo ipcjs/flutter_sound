@@ -3,3 +3,7 @@ doc/_site/
 *.tgz
 extract/
 .DS_Store
+
+.fvm/
+.dart_tool/
+.idea/
